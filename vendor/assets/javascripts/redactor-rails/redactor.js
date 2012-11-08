@@ -226,51 +226,94 @@ var RLANG = {
 				'</div>',
 
 			modal_image_edit: String() +
-				'<div id="redactor_modal_content">' +
-				'<label>' + RLANG.title + '</label>' +
-				'<input id="redactor_file_alt" class="redactor_input" />' +
-				'<label>' + RLANG.link + '</label>' +
-				'<input id="redactor_file_link" class="redactor_input" />' +
-				'<label>' + RLANG.image_position + '</label>' +
-				'<select id="redactor_form_image_align">' +
-					'<option value="none">' + RLANG.none + '</option>' +
-					'<option value="left">' + RLANG.left + '</option>' +
-					'<option value="right">' + RLANG.right + '</option>' +
-				'</select>' +
+				'<div class="modal-body">' +
+				'<div class="control-group redactor_file_alt">' +
+					'<div class="control-label">' +
+						'<label class="label" for="redactor_file_alt">' + RLANG.title + '</label>' +
+					'</div>' +
+					'<div class="controls">' +
+						'<input type="text" id="redactor_file_alt" class="redactor_input" required="required">' +
+					'</div>' +
 				'</div>' +
-				'<div id="redactor_modal_footer">' +
-					'<a href="javascript:void(null);" id="redactor_image_delete_btn" class="redactor_modal_btn">' + RLANG._delete + '</a>&nbsp;&nbsp;&nbsp;' +
-					'<a href="javascript:void(null);" class="redactor_modal_btn redactor_btn_modal_close">' + RLANG.cancel + '</a>' +
-					'<input type="button" name="save" class="redactor_modal_btn" id="redactorSaveBtn" value="' + RLANG.save + '" />' +
+				
+				'<div class="control-group redactor_file_link">' +
+					'<div class="control-label">' +
+						'<label class="label" for="redactor_file_link">' + RLANG.link + '</label>' +
+					'</div>' +
+					'<div class="controls">' +
+						'<input type="text" id="redactor_file_link" class="redactor_input" required="required">' +
+					'</div>' +
+				'</div>' +
+				
+				'<div class="control-group redactor_form_image_align">' +
+					'<div class="control-label">' +
+						'<label class="label" for="redactor_form_image_align">' + RLANG.image_position + '</label>' +
+					'</div>' +
+					'<div class="controls">' +
+						'<select id="redactor_form_image_align">' +
+							'<option value="none">' + RLANG.none + '</option>' +
+							'<option value="left">' + RLANG.left + '</option>' +
+							'<option value="right">' + RLANG.right + '</option>' +
+						'</select>' +
+					'</div>' +
+				'</div>' +
+				
+				'</div>' +
+				'<div class="modal-footer">' +
+				'<a href="#" data-dismiss="modal"><button class="btn">' + RLANG.cancel + '</button></a>&nbsp;' +
+				'<a href="#" id="redactor_image_delete_btn"><button class="btn btn-danger">' + RLANG._delete + '</button></a>&nbsp;' +
+				'<a href="#" id="redactorSaveBtn"><button class="btn btn-success">' +  RLANG.save + '</button></a>' + 
 				'</div>',
 
 			modal_image: String() +
-				'<div id="redactor_modal_content">' +
+				'<div class="modal-body">' +
 				'<div id="redactor_tabs">' +
 					'<a href="javascript:void(null);" class="redactor_tabs_act">' + RLANG.upload + '</a>' +
 					'<a href="javascript:void(null);">' + RLANG.choose + '</a>' +
 					'<a href="javascript:void(null);">' + RLANG.link + '</a>' +
 				'</div>' +
 				'<form id="redactorInsertImageForm" method="post" action="" enctype="multipart/form-data">' +
+					// Tab 1
 					'<div id="redactor_tab1" class="redactor_tab">' +
-						'<input type="file" id="redactor_file" name="file" />' +
+						'<input id="redactor_file" name="file" style="display:none" type="file">' +
+						'<div class="control-group redactor_file">' +
+							'<div class="control-label">' +
+								'<label class="label" for="redactor_file">Choose File</label>' +
+							'</div>' +
+							'<div class="controls">' +
+								'<div class="input-append">' +
+								'<input class="file-field" disabled="disabled" id="image_file" type="text">' +
+								'<a class="btn btn-primary" onclick="$(\'input[id=redactor_file]\').click();">Browse</a>' +
+								'</div>' +
+							'</div>' +
+						'</div>' +
 					'</div>' +
+					
+					// Tab 2
 					'<div id="redactor_tab2" class="redactor_tab" style="display: none;">' +
 						'<div id="redactor_image_box"></div>' +
 					'</div>' +
 				'</form>' +
+				
+				// Tab 3
 				'<div id="redactor_tab3" class="redactor_tab" style="display: none;">' +
-					'<label>' + RLANG.image_web_link + '</label>' +
-					'<input type="text" name="redactor_file_link" id="redactor_file_link" class="redactor_input"  />' +
+					'<div class="control-group redactor_link_url">' +
+						'<div class="control-label">' +
+							'<label class="label" for="redactor_file_link">' + RLANG.image_web_link + '</label>' +
+						'</div>' +
+						'<div class="controls">' +
+							'<input type="text" name="redactor_file_link" id="redactor_file_link" class="redactor_input" required="required">' +
+						'</div>' +
+					'</div>' +
 				'</div>' +
 				'</div>' +
-				'<div id="redactor_modal_footer">' +
-					'<a href="javascript:void(null);" class="redactor_modal_btn redactor_btn_modal_close">' + RLANG.cancel + '</a>' +
-					'<input type="button" name="upload" class="redactor_modal_btn" id="redactor_upload_btn" value="' + RLANG.insert + '" />' +
+				'<div class="modal-footer">' +
+				'<a href="#" class="btn" data-dismiss="modal">' + RLANG.cancel + '</a>' +
+				'<a href="#" class="btn btn-success" class="redactor_modal_btn" id="redactor_upload_btn">' + RLANG.insert + '</a>' + 
 				'</div>',
 
-			modal_link: String() +
-				'<div id="redactor_modal_content">' +
+			modal_link: String() +	
+				'<div class="modal-body">' +
 				'<form id="redactorInsertLinkForm" method="post" action="">' +
 					'<div id="redactor_tabs">' +
 						'<a href="javascript:void(null);" class="redactor_tabs_act">URL</a>' +
@@ -278,48 +321,126 @@ var RLANG = {
 						'<a href="javascript:void(null);">' + RLANG.anchor + '</a>' +
 					'</div>' +
 					'<input type="hidden" id="redactor_tab_selected" value="1" />' +
+					
+					// TAB 1
 					'<div class="redactor_tab" id="redactor_tab1">' +
-						'<label>URL</label><input type="text" id="redactor_link_url" class="redactor_input"  />' +
-						'<label>' + RLANG.text + '</label><input type="text" class="redactor_input redactor_link_text" id="redactor_link_url_text" />' +
-						'<label><input type="checkbox" id="redactor_link_blank"> ' + RLANG.link_new_tab + '</label>' +
+						'<div class="control-group redactor_link_url">' +
+							'<div class="control-label">' +
+								'<label class="label" for="redactor_link_url">URL</label>' +
+							'</div>' +
+							'<div class="controls">' +
+								'<input type="text" id="redactor_link_url" class="redactor_input" required="required">' +
+							'</div>' +
+						'</div>' +
+						
+						'<div class="control-group redactor_link_url">' +
+							'<div class="control-label">' +
+								'<label class="label" for="redactor_link_url_text">' + RLANG.text + '</label>' +
+							'</div>' +
+							'<div class="controls">' +
+								'<input type="text" id="redactor_link_url_text" class="redactor_input redactor_link_text" placeholder="" required="required">' +
+							'</div>' +
+						'</div>' +
+						
+						'<div class="control-group redactor_link_url">' +
+							'<div class="control-label">' +
+								'<label class="label" for="redactor_link_blank">' + RLANG.link_new_tab + '</label>' +
+							'</div>' +
+							'<div class="controls">' +
+								'<input type="checkbox" id="redactor_link_blank" checked="checked">' +
+							'</div>' +
+						'</div>' +
 					'</div>' +
+					
+					// TAB 2
 					'<div class="redactor_tab" id="redactor_tab2" style="display: none;">' +
-						'<label>Email</label><input type="text" id="redactor_link_mailto" class="redactor_input" />' +
-						'<label>' + RLANG.text + '</label><input type="text" class="redactor_input redactor_link_text" id="redactor_link_mailto_text" />' +
+						'<div class="control-group redactor_link_url">' +
+							'<div class="control-label">' +
+								'<label class="label" for="redactor_link_mailto">Email</label>' +
+							'</div>' +
+							'<div class="controls">' +
+								'<input type="text" id="redactor_link_mailto" class="redactor_input" placeholder="" required="required">' +
+							'</div>' +
+						'</div>' +
+						
+						'<div class="control-group redactor_link_url">' +
+							'<div class="control-label">' +
+								'<label class="label" for="redactor_link_mailto_text">' + RLANG.text + '</label>' +
+							'</div>' +
+							'<div class="controls">' +
+								'<input type="text" class="redactor_input redactor_link_text" id="redactor_link_mailto_text" placeholder="" required="required">' +
+							'</div>' +
+						'</div>' +
 					'</div>' +
+					
+					// TAB 3
 					'<div class="redactor_tab" id="redactor_tab3" style="display: none;">' +
-						'<label>' + RLANG.anchor + '</label><input type="text" class="redactor_input" id="redactor_link_anchor"  />' +
-						'<label>' + RLANG.text + '</label><input type="text" class="redactor_input redactor_link_text" id="redactor_link_anchor_text" />' +
+						'<div class="control-group redactor_link_url">' +
+							'<div class="control-label">' +
+								'<label class="label" for="redactor_link_anchor">' + RLANG.anchor + '</label>' +
+							'</div>' +
+							'<div class="controls">' +
+								'<input type="text" class="redactor_input" id="redactor_link_anchor" placeholder="" required="required">' +
+							'</div>' +
+						'</div>' +
+						
+						'<div class="control-group redactor_link_url">' +
+							'<div class="control-label">' +
+								'<label class="label" for="redactor_link_anchor_text">' + RLANG.text + '</label>' +
+							'</div>' +
+							'<div class="controls">' +
+								'<input type="text" class="redactor_input redactor_link_text" id="redactor_link_anchor_text" placeholder="" required="required">' +
+							'</div>' +
+						'</div>' +
 					'</div>' +
 				'</form>' +
 				'</div>' +
-				'<div id="redactor_modal_footer">' +
-					'<a href="javascript:void(null);" class="redactor_modal_btn redactor_btn_modal_close">' + RLANG.cancel + '</a>' +
-					'<input type="button" class="redactor_modal_btn" id="redactor_insert_link_btn" value="' + RLANG.insert + '" />' +
+				'<div class="modal-footer">' +
+				'<a href="#" class="btn" data-dismiss="modal">' + RLANG.cancel + '</a>' +
+				'<a href="#" class="btn btn-success" class="redactor_modal_btn" id="redactor_insert_link_btn">' + RLANG.insert + '</a>' + 
 				'</div>',
+				
 
 			modal_table: String() +
-				'<div id="redactor_modal_content">' +
-					'<label>' + RLANG.rows + '</label>' +
-					'<input type="text" size="5" value="2" id="redactor_table_rows" />' +
-					'<label>' + RLANG.columns + '</label>' +
-					'<input type="text" size="5" value="3" id="redactor_table_columns" />' +
+				'<div class="modal-body">' +
+				'<div class="control-group redactor_table_rows">' +
+					'<div class="control-label">' +
+						'<label class="label" for="redactor_table_rows">' + RLANG.rows + '</label>' +
+					'</div>' +
+					'<div class="controls">' +
+						'<input type="text" id="redactor_table_rows" placeholder="2" required="required" value="2">' +
+					'</div>' +
 				'</div>' +
-				'<div id="redactor_modal_footer">' +
-					'<a href="javascript:void(null);" class="redactor_modal_btn redactor_btn_modal_close">' + RLANG.cancel + '</a>' +
-					'<input type="button" name="upload" class="redactor_modal_btn" id="redactor_insert_table_btn" value="' + RLANG.insert + '" />' +
+				'<div class="control-group redactor_table_columns">' +
+					'<div class="control-label">' +
+						'<label class="label" for="redactor_table_columns">' + RLANG.rows + '</label>' +
+					'</div>' +
+					'<div class="controls">' +
+						'<input type="text" id="redactor_table_columns" placeholder="3" required="required" value="3">' +
+					'</div>' +
+				'</div>' +
+				'</div>' +
+				'<div class="modal-footer">' +
+				'<a href="#" class="btn" data-dismiss="modal">' + RLANG.cancel + '</a>' +
+				'<a href="#" class="btn btn-success" class="redactor_modal_btn" id="redactor_insert_table_btn">' + RLANG.insert + '</a>' + 
 				'</div>',
 
 			modal_video: String() +
-				'<div id="redactor_modal_content">' +
+				'<div class="modal-body">' +
 				'<form id="redactorInsertVideoForm">' +
-					'<label>' + RLANG.video_html_code + '</label>' +
-					'<textarea id="redactor_insert_video_area" style="width: 99%; height: 160px;"></textarea>' +
+				'<div class="control-group redactor_table_columns">' +
+					'<div class="control-label">' +
+						'<label class="label" for="redactor_table_columns">' + RLANG.video_html_code + '</label>' +
+					'</div>' +
+					'<div class="controls">' +
+						'<textarea id="redactor_insert_video_area" style="width:97%;height:175px;"></textarea>' +
+					'</div>' +
+				'</div>' +
 				'</form>' +
-				'</div>'+
-				'<div id="redactor_modal_footer">' +
-					'<a href="javascript:void(null);" class="redactor_modal_btn redactor_btn_modal_close">' + RLANG.cancel + '</a>' +
-					'<input type="button" class="redactor_modal_btn" id="redactor_insert_video_btn" value="' + RLANG.insert + '" />' +
+				'</div>' +
+				'<div class="modal-footer">' +
+				'<a href="#" class="btn" data-dismiss="modal">' + RLANG.cancel + '</a>' +
+				'<a href="#" class="btn btn-success" name="upload" class="redactor_modal_btn" id="redactor_insert_video_btn">' + RLANG.insert + '</a>' + 
 				'</div>',
 
 			toolbar: {
@@ -3281,58 +3402,35 @@ var RLANG = {
 			this.modalClose();
 		},
 
-
-
 		// MODAL
 		modalInit: function(title, content, width, callback)
 		{
-			// modal overlay
-			if ($('#redactor_modal_overlay').size() === 0)
+			this.modal = $('<div id="redactor_bootstrap_modal" class="modal hide fade">' + 
+										 '<div class="modal-header">' +
+										 '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+										 '<h3>' + title + '</h3>' +
+										 '</div>' + 
+											content + 
+										 '</div>');
+			$('body').prepend(this.modal);
+			this.modal.modal('show');
+			
+			this.modal.on('shown', function() {
+				$(this).find('form:first *:input[type!=hidden]:first').focus();
+				
+				$(this).find('input[id=redactor_file]').change(function() {
+				    val = $(this).val().substring(12);
+		       $('#image_file').val(val);
+		    });
+		
+			})
+						
+			if (typeof callback === 'function')
 			{
-				this.overlay = $('<div id="redactor_modal_overlay" style="display: none;"></div>');
-				$('body').prepend(this.overlay);
-			}
-
-			if (this.opts.overlay)
-			{
-				$('#redactor_modal_overlay').show();
-				$('#redactor_modal_overlay').click($.proxy(this.modalClose, this));
-			}
-
-			if ($('#redactor_modal').size() === 0)
-			{
-				this.modal = $('<div id="redactor_modal" style="display: none;"><div id="redactor_modal_close">&times;</div><div id="redactor_modal_header"></div><div id="redactor_modal_inner"></div></div>');
-				$('body').append(this.modal);
-			}
-
-			$('#redactor_modal_close').click($.proxy(this.modalClose, this));
-
-			this.hdlModalClose = $.proxy(function(e) { if ( e.keyCode === 27) { this.modalClose(); return false; } }, this);
-
-			$(document).keyup(this.hdlModalClose);
-			this.$editor.keyup(this.hdlModalClose);
-
-			// set content
-			if (content.indexOf('#') == 0)
-			{
-				$('#redactor_modal_inner').empty().append($(content).html());
-			}
-			else
-			{
-				$('#redactor_modal_inner').empty().append(content);
-			}
-
-
-			$('#redactor_modal_header').html(title);
-
-			// draggable
-			if (typeof $.fn.draggable !== 'undefined')
-			{
-				$('#redactor_modal').draggable({ handle: '#redactor_modal_header' });
-				$('#redactor_modal_header').css('cursor', 'move');
-			}
-
-			// tabs
+				callback();
+			}	
+			
+			//tabs
 			if ($('#redactor_tabs').size() !== 0)
 			{
 				var that = this;
@@ -3355,67 +3453,12 @@ var RLANG = {
 					});
 				});
 			}
-
-
-
-			$('#redactor_modal .redactor_btn_modal_close').click($.proxy(this.modalClose, this));
-
-			if (this.isMobile() === false)
-			{
-				$('#redactor_modal').css({ position: 'fixed', top: '-2000px', left: '50%', width: width + 'px', marginLeft: '-' + (width+60)/2 + 'px' }).show();
-
-				this.modalSaveBodyOveflow = $(document.body).css('overflow');
-				$(document.body).css('overflow', 'hidden');
-			}
-			else
-			{
-				$('#redactor_modal').css({ position: 'fixed', width: '100%', height: '100%', top: '0', left: '0', margin: '0', minHeight: '300px' }).show();
-			}
-
-			// callback
-			if (typeof callback === 'function')
-			{
-				callback();
-			}
-
-			if (this.isMobile() === false)
-			{
-				setTimeout(function()
-				{
-					var height = $('#redactor_modal').outerHeight();
-					$('#redactor_modal').css({ top: '50%', height: 'auto', minHeight: 'auto', marginTop: '-' + (height+10)/2 + 'px' });
-
-				}, 20);
-			}
-
 		},
 		modalClose: function()
 		{
-			$('#redactor_modal_close').unbind('click', this.modalClose);
-			$('#redactor_modal').fadeOut('fast', $.proxy(function()
-			{
-				$('#redactor_modal_inner').html('');
-
-				if (this.opts.overlay)
-				{
-					$('#redactor_modal_overlay').hide();
-					$('#redactor_modal_overlay').unbind('click', this.modalClose);
-				}
-
-				$(document).unbind('keyup', this.hdlModalClose);
-				this.$editor.unbind('keyup', this.hdlModalClose);
-
-			}, this));
-
-
-			if (this.isMobile() === false)
-			{
-				$(document.body).css('overflow', this.modalSaveBodyOveflow ? this.modalSaveBodyOveflow : 'visible');
-			}
-
-			return false;
-
+			$('#redactor_bootstrap_modal').modal('hide');
 		},
+		
 		setModalTab: function(num)
 		{
 			$('.redactor_tab').hide();
@@ -3734,9 +3777,8 @@ var RLANG = {
 				this.dropalternative = $('<div class="redactor_dropalternative">' + this.opts.atext + '</div>');
 
 				this.droparea.append(this.dropareabox);
-
 				this.$el.before(this.droparea);
-				this.$el.before(this.dropalternative);
+
 
 				// drag over
 				this.dropareabox.bind('dragover', $.proxy(function() { return this.ondrag(); }, this));

@@ -530,7 +530,7 @@ body .redactor_toolbar li a.redactor_btn_alignment	 		{ background-position: -62
 	text-decoration: none;
 	color: #000;
 	line-height: 1;
-	border-radius: 10px;
+	border-radius: 0px;
 	margin-right: 5px;	
 }
 #redactor_tabs a:hover, #redactor_tabs a.redactor_tabs_act {
