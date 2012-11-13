@@ -2683,34 +2683,34 @@ var RLANG = {
 
 			}, this));
 
-			$(resize).mousemove(function(e)
-			{
-				if (clicked)
-				{
-					clicker = false;
-
-					var mouse_x = Math.round(e.pageX - $(this).eq(0).offset().left) - start_x;
-					var mouse_y = Math.round(e.pageY - $(this).eq(0).offset().top) - start_y;
-
-					var div_h = $(resize).height();
-
-					var new_h = parseInt(div_h, 10) + mouse_y;
-					var new_w = new_h*ratio;
-
-					if (new_w > min_w)
-					{
-						$(resize).width(new_w);
-					}
-
-					if (new_h > min_h)
-					{
-						$(resize).height(new_h);
-					}
-
-					start_x = Math.round(e.pageX - $(this).eq(0).offset().left);
-					start_y = Math.round(e.pageY - $(this).eq(0).offset().top);
-				}
-			});
+			// $(resize).mousemove(function(e)
+			// 			{
+			// 				if (clicked)
+			// 				{
+			// 					clicker = false;
+			// 
+			// 					var mouse_x = Math.round(e.pageX - $(this).eq(0).offset().left) - start_x;
+			// 					var mouse_y = Math.round(e.pageY - $(this).eq(0).offset().top) - start_y;
+			// 
+			// 					var div_h = $(resize).height();
+			// 
+			// 					var new_h = parseInt(div_h, 10) + mouse_y;
+			// 					var new_w = new_h*ratio;
+			// 
+			// 					if (new_w > min_w)
+			// 					{
+			// 						$(resize).width(new_w);
+			// 					}
+			// 
+			// 					if (new_h > min_h)
+			// 					{
+			// 						$(resize).height(new_h);
+			// 					}
+			// 
+			// 					start_x = Math.round(e.pageX - $(this).eq(0).offset().left);
+			// 					start_y = Math.round(e.pageY - $(this).eq(0).offset().top);
+			// 				}
+			// 			});
 		},
 
 		// TABLE
@@ -3138,7 +3138,7 @@ var RLANG = {
 		_imageSet: function(json, link)
 		{
 			this.restoreSelection();
-
+			
 			if (json !== false)
 			{
 				var html = '';
@@ -3372,18 +3372,17 @@ var RLANG = {
 		fileUploadCallback: function(json)
 		{
 			this.restoreSelection();
-
+			
 			if (json !== false)
 			{
 				var text = $('#redactor_filename').val();
-
+				
 				if (text === '')
 				{
 					text = json.filename;
 				}
 
 				var link = '<a href="' + json.filelink + '">' + text + '</a>';
-
 				// chrome fix
 				if ($.browser.webkit && !!window.chrome)
 				{
@@ -3609,7 +3608,7 @@ var RLANG = {
 					var rawString = d.body.innerHTML;
 					var jsonString = rawString.match(/\{(.|\n)*\}/)[0];
 					var json = $.parseJSON(jsonString);
-
+					
 					if (typeof json.error == 'undefined')
 					{
 						this.uploadOptions.success(json);
