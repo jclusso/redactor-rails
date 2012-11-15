@@ -2899,9 +2899,6 @@ var RLANG = {
 			data = data.replace(/height="\d+"/, '');
 			
 			data = '<div class="embed-container">' + data + '</div>';
-			data = this.stripTags(data);
-			
-			alert(data);
 			
 			this.restoreSelection();
 			this.execCommand('inserthtml', data);
