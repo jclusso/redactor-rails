@@ -2895,11 +2895,6 @@ var RLANG = {
 			
 			data = this.stripTags(data);
 			
-			data = data.replace(/width="\d+"/, '');
-			data = data.replace(/height="\d+"/, '');
-			
-			data = '<div class="embed-container">' + data + '</div>';
-			
 			this.restoreSelection();
 			this.execCommand('inserthtml', data);
 			this.modalClose();
