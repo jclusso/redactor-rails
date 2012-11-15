@@ -2892,8 +2892,17 @@ var RLANG = {
 		insertVideo: function()
 		{
 			var data = $('#redactor_insert_video_area').val();
+			
 			data = this.stripTags(data);
-
+			
+			data = data.replace(/width="\d+"/, '')
+			data = data.replace(/height="\d+"/, '')
+			
+			data = '<div class="embed-container">' + data + '</div>';
+			data = this.stripTags(data);
+			
+			alert(data);
+			
 			this.restoreSelection();
 			this.execCommand('inserthtml', data);
 			this.modalClose();
