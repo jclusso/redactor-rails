@@ -2652,7 +2652,7 @@ var RLANG = {
 			var min_h = 10;
 
 			$(resize).off('hover mousedown mouseup click mousemove');
- 			$(resize).hover(function() { $(resize).css('cursor', 'nw-resize'); }, function() { $(resize).css('cursor',''); clicked = false; });
+ 			//$(resize).hover(function() { $(resize).css('cursor', 'nw-resize'); }, function() { $(resize).css('cursor',''); clicked = false; });
 
 			$(resize).mousedown(function(e)
 			{
@@ -2948,7 +2948,7 @@ var RLANG = {
 			}
 			else
 			{
-				$(el).css({ 'float': 'none', margin: '0' });
+				$(el).css({ 'float': 'none', margin: '0'});
 			}
 
 			// as link
