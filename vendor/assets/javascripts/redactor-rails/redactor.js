@@ -2940,11 +2940,11 @@ var RLANG = {
 
 			if (floating === 'left')
 			{
-				$(el).css({ 'float': 'left', margin: '0 10px 10px 0' });
+				$(el).css({ 'float': 'left', margin: '0 15px 15px 0' });
 			}
 			else if (floating === 'right')
 			{
-				$(el).css({ 'float': 'right', margin: '0 0 10px 10px' });
+				$(el).css({ 'float': 'right', margin: '0 0 15px 15px' });
 			}
 			else
 			{
