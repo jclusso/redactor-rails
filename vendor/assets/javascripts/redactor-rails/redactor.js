@@ -146,7 +146,7 @@ var RLANG = {
 			wym: false,
 
 			convertLinks: true,
-			convertDivs: true,
+			convertDivs: false,
 			protocol: 'http://', // for links http or https or ftp or false
 
 			autosave: false, // false or url
@@ -2892,8 +2892,6 @@ var RLANG = {
 		insertVideo: function()
 		{
 			var data = $('#redactor_insert_video_area').val();
-			
-			data = this.stripTags(data);
 			
 			data = data.replace(/width="\d+"/, '');
 			data = data.replace(/height="\d+"/, '');
