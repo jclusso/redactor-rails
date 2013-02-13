@@ -262,7 +262,7 @@ var RLANG = {
 				'<div class="modal-footer">' +
 				'<a href="#" data-dismiss="modal"><button class="btn">' + RLANG.cancel + '</button></a>&nbsp;' +
 				'<a href="#" id="redactor_image_delete_btn"><button class="btn btn-danger">' + RLANG._delete + '</button></a>&nbsp;' +
-				'<a href="#" id="redactorSaveBtn"><button class="btn btn-success">' +  RLANG.save + '</button></a>' + 
+				'<a href="#" id="redactorSaveBtn"><button class="btn btn-primary">' +  RLANG.save + '</button></a>' + 
 				'</div>',
 
 			modal_image: String() +
@@ -309,7 +309,7 @@ var RLANG = {
 				'</div>' +
 				'<div class="modal-footer">' +
 				'<a href="#" class="btn" data-dismiss="modal">' + RLANG.cancel + '</a>' +
-				'<a href="#" class="btn btn-success" class="redactor_modal_btn" id="redactor_upload_btn">' + RLANG.insert + '</a>' + 
+				'<a href="#" class="btn btn-primary" class="redactor_modal_btn" id="redactor_upload_btn">' + RLANG.insert + '</a>' + 
 				'</div>',
 
 			modal_link: String() +	
@@ -397,7 +397,7 @@ var RLANG = {
 				'</div>' +
 				'<div class="modal-footer">' +
 				'<a href="#" class="btn" data-dismiss="modal">' + RLANG.cancel + '</a>' +
-				'<a href="#" class="btn btn-success" class="redactor_modal_btn" id="redactor_insert_link_btn">' + RLANG.insert + '</a>' + 
+				'<a href="#" class="btn btn-primary" class="redactor_modal_btn" id="redactor_insert_link_btn">' + RLANG.insert + '</a>' + 
 				'</div>',
 				
 
@@ -422,7 +422,7 @@ var RLANG = {
 				'</div>' +
 				'<div class="modal-footer">' +
 				'<a href="#" class="btn" data-dismiss="modal">' + RLANG.cancel + '</a>' +
-				'<a href="#" class="btn btn-success" class="redactor_modal_btn" id="redactor_insert_table_btn">' + RLANG.insert + '</a>' + 
+				'<a href="#" class="btn btn-primary" class="redactor_modal_btn" id="redactor_insert_table_btn">' + RLANG.insert + '</a>' + 
 				'</div>',
 
 			modal_video: String() +
@@ -440,7 +440,7 @@ var RLANG = {
 				'</div>' +
 				'<div class="modal-footer">' +
 				'<a href="#" class="btn" data-dismiss="modal">' + RLANG.cancel + '</a>' +
-				'<a href="#" class="btn btn-success" name="upload" class="redactor_modal_btn" id="redactor_insert_video_btn">' + RLANG.insert + '</a>' + 
+				'<a href="#" class="btn btn-primary" name="upload" class="redactor_modal_btn" id="redactor_insert_video_btn">' + RLANG.insert + '</a>' + 
 				'</div>',
 
 			toolbar: {
