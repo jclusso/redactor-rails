@@ -268,8 +268,8 @@ var RLANG = {
 			modal_image: String() +
 				'<div class="modal-body">' +
 				'<div id="redactor_tabs">' +
-					//'<a href="javascript:void(null);" class="redactor_tabs_act">' + RLANG.upload + '</a>' +
-					//'<a href="javascript:void(null);">' + RLANG.choose + '</a>' +
+					'<a href="javascript:void(null);" class="redactor_tabs_act">' + RLANG.upload + '</a>' +
+					'<a href="javascript:void(null);">' + RLANG.choose + '</a>' +
 					'<a href="javascript:void(null);" class="redactor_tabs_act">' + RLANG.link + '</a>' +
 				'</div>' +
 				'<form id="redactorInsertImageForm" method="post" action="" enctype="multipart/form-data">' +
