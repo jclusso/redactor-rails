@@ -271,11 +271,11 @@ var RLANG = {
 					//'<a href="javascript:void(null);" class="redactor_tabs_act">' + RLANG.upload + '</a>' +
 					//'<a href="javascript:void(null);">' + RLANG.choose + '</a>' +
 					//'<a href="javascript:void(null);" class="redactor_tabs_act">' + RLANG.link + '</a>' +
-					'<a href="javascript:void(null);">' + RLANG.link + '</a>' +
+					'<a href="javascript:void(null);" class="redactor_tabs_act">' + RLANG.link + '</a>' +
 				'</div>' +
 				'<form id="redactorInsertImageForm" method="post" action="" enctype="multipart/form-data">' +
 					// Tab 1
-					'<div id="redactor_tab1" class="redactor_tab"  style="display: none;">' +
+					/*'<div id="redactor_tab1" class="redactor_tab"  style="display: none;">' +
 						'<input id="redactor_file" name="file" style="display:none" type="file">' +
 						'<div class="control-group redactor_file">' +
 							'<div class="control-label">' +
@@ -288,13 +288,13 @@ var RLANG = {
 								'</div>' +
 							'</div>' +
 						'</div>' +
-					'</div>',
+					'</div>' +
 					
 					// Tab 2
-					/*'<div id="redactor_tab2" class="redactor_tab" style="display: none;">' +
+					'<div id="redactor_tab2" class="redactor_tab" style="display: none;">' +
 						'<div id="redactor_image_box"></div>' +
 					'</div>' +
-				'</form>' +
+				'</form>' +*/
 				
 				// Tab 3
 				'<div id="redactor_tab3" class="redactor_tab">' +
@@ -311,7 +311,7 @@ var RLANG = {
 				'<div class="modal-footer">' +
 				'<a href="#" class="btn" data-dismiss="modal">' + RLANG.cancel + '</a>' +
 				'<a href="#" class="btn btn-primary" class="redactor_modal_btn" id="redactor_upload_btn">' + RLANG.insert + '</a>' + 
-				'</div>',*/
+				'</div>',
 
 			modal_link: String() +	
 				'<div class="modal-body">' +
