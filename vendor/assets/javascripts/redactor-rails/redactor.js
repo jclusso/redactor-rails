@@ -268,9 +268,10 @@ var RLANG = {
 			modal_image: String() +
 				'<div class="modal-body">' +
 				'<div id="redactor_tabs">' +
-					'<a href="javascript:void(null);" class="redactor_tabs_act">' + RLANG.upload + '</a>' +
-					'<a href="javascript:void(null);">' + RLANG.choose + '</a>' +
-					'<a href="javascript:void(null);" class="redactor_tabs_act">' + RLANG.link + '</a>' +
+					//'<a href="javascript:void(null);" class="redactor_tabs_act">' + RLANG.upload + '</a>' +
+					//'<a href="javascript:void(null);">' + RLANG.choose + '</a>' +
+					//'<a href="javascript:void(null);" class="redactor_tabs_act">' + RLANG.link + '</a>' +
+					'<a href="javascript:void(null);">' + RLANG.link + '</a>' +
 				'</div>' +
 				'<form id="redactorInsertImageForm" method="post" action="" enctype="multipart/form-data">' +
 					// Tab 1
@@ -287,10 +288,10 @@ var RLANG = {
 								'</div>' +
 							'</div>' +
 						'</div>' +
-					'</div>' +
+					'</div>',
 					
 					// Tab 2
-					'<div id="redactor_tab2" class="redactor_tab" style="display: none;">' +
+					/*'<div id="redactor_tab2" class="redactor_tab" style="display: none;">' +
 						'<div id="redactor_image_box"></div>' +
 					'</div>' +
 				'</form>' +
@@ -310,7 +311,7 @@ var RLANG = {
 				'<div class="modal-footer">' +
 				'<a href="#" class="btn" data-dismiss="modal">' + RLANG.cancel + '</a>' +
 				'<a href="#" class="btn btn-primary" class="redactor_modal_btn" id="redactor_upload_btn">' + RLANG.insert + '</a>' + 
-				'</div>',
+				'</div>',*/
 
 			modal_link: String() +	
 				'<div class="modal-body">' +
